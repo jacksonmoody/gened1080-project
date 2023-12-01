@@ -1,0 +1,59 @@
+h1 {
+  font-size: 3.2em;
+  line-height: 1;
+}
+
+header, footer {
+  text-align: center;
+}
+
+.noteContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.sendButton {
+  outline: 0;
+  cursor: pointer;
+  border: none;
+  padding: 0 56px;
+  margin: 20px;
+  height: 55px;
+  line-height: 45px;
+  border-radius: 7px;
+  background-color: #0070f3;
+  color: white;
+  font-weight: 400;
+  font-size: 16px;
+  box-shadow: 0 4px 14px 0 rgb(0 118 255 / 39%);
+  transition: 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sendButton:hover {
+  background: rgba(0, 118, 255, 0.9);
+  box-shadow: 0 6px 20px rgb(0 118 255 / 23%);
+}
+
+.cancelButton {
+  outline: 0;
+  cursor: pointer;
+  border: none;
+  padding: 0 56px;
+  margin: 20px;
+  height: 55px;
+  line-height: 45px;
+  border-radius: 7px;
+  background-color: grey;
+  color: white;
+  font-weight: 400;
+  font-size: 16px;
+  box-shadow: 0 4px 14px 0 rgba(58, 64, 70, 0.39);
+  transition: 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cancelButton:hover {
+  background: rgba(48, 54, 58, 0.39);
+  box-shadow: 0 6px 20px rgba(106, 116, 127, 0.39);
+}
