@@ -1,6 +1,6 @@
 import {useDraggable} from '@dnd-kit/core';
 
-export function Draggable({ id, color, children }) {
+export function Draggable({ id, color, children, disabled }) {
   const {attributes, listeners, setNodeRef, transform} = useDraggable({
     id: id
   });
@@ -8,7 +8,7 @@ export function Draggable({ id, color, children }) {
     transform: transform ? `translate3d(${transform.x}px, ${transform.y}px, 0)` : undefined,
     backgroundColor: color,
     borderRadius: "25px",
-    cursor: "grab",
+    cursor: disabled ? "default" : "grab",
     fontSize: "30px",
     fontWeight: "bold",
     height: "100px",
@@ -19,9 +19,17 @@ export function Draggable({ id, color, children }) {
   };
 
 
-  return (
-    <div ref={setNodeRef} style={style} {...listeners} {...attributes}>
-      {children}
-    </div>
-  );
+  if (!disabled) {
+    return (
+      <div ref={setNodeRef} style={style} {...listeners} {...attributes}>
+        {children}
+      </div>
+    );
+  } else {
+    return (
+      <div style={style}>
+        {children}
+      </div>
+    );
+  }
 }

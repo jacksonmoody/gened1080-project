@@ -103,6 +103,7 @@ function App() {
                 key={parents[i]}
                 id={parents[i]}
                 color={colors[Math.floor(parents[i] / numSpots)]}
+                disabled={true}
               >
               {noteNames[Math.floor(parents[i] / numSpots)]}
               </Draggable>
