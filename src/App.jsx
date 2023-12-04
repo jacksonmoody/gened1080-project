@@ -2,6 +2,9 @@ import "./App.css";
 import { useState } from "react";
 import { DndContext } from "@dnd-kit/core";
 import useSound from 'use-sound';
+import { ref, set } from "firebase/database";
+import db from './firebase';
+
 
 import { Droppable } from "./Droppable";
 import { Draggable } from "./Draggable";
@@ -54,7 +57,12 @@ function App() {
       }
       return Math.floor(id / numSpots);
     });
-    console.log(toSend);
+    const currentDate = new Date(); 
+    const timestamp = currentDate.getTime();
+    set(ref(db), {
+      song: toSend,
+      timestamp: timestamp,
+    });
   }
 
   function cancel() {
