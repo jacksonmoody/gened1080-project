@@ -2,8 +2,6 @@ import "./App.css";
 import { useState } from "react";
 import { DndContext } from "@dnd-kit/core";
 import useSound from 'use-sound';
-import { ref, set } from "firebase/database";
-import db from './firebase';
 
 
 import { Droppable } from "./Droppable";
@@ -59,10 +57,13 @@ function App() {
     });
     const currentDate = new Date(); 
     const timestamp = currentDate.getTime();
-    set(ref(db), {
-      song: toSend,
-      timestamp: timestamp,
-    });
+    const dweet = {
+      "song": toSend,
+      "timestamp": timestamp,
+    };
+    const dweetString = JSON.stringify(dweet);
+    const dweetUrl = "http://dweet.io/dweet/for/gened1080?content=" + dweetString;
+    fetch(dweetUrl);
   }
 
   function cancel() {
