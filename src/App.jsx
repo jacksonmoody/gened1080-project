@@ -62,7 +62,7 @@ function App() {
       "timestamp": timestamp,
     };
     const dweetString = JSON.stringify(dweet);
-    const dweetUrl = "http://dweet.io/dweet/for/gened1080?content=" + dweetString;
+    const dweetUrl = "https://dweet.io/dweet/for/gened1080?content=" + dweetString;
     fetch(dweetUrl);
   }
 
