@@ -7,6 +7,7 @@ export function Draggable({ id, color, children, disabled }) {
   const style = {
     transform: transform ? `translate3d(${transform.x}px, ${transform.y}px, 0)` : undefined,
     backgroundColor: color,
+    border : color == "#ffffff" ? "1px solid black" : undefined,
     borderRadius: "25px",
     cursor: disabled ? "default" : "grab",
     fontSize: "30px",
@@ -14,7 +15,7 @@ export function Draggable({ id, color, children, disabled }) {
     height: "100px",
     paddingTop: "70px",
     textAlign: "center",
-    width: "160px",
+    width: "200px",
     margin: "5px 5px",
   };
 

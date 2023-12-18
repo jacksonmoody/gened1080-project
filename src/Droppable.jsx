@@ -18,7 +18,7 @@ export function Droppable({id, children}) {
     height: "100px",
     paddingTop: "80px",
     textAlign: "center",
-    width: "160px",
+    width: "200px",
     margin: "5px 5px",
   };
   

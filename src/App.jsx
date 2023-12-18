@@ -8,40 +8,34 @@ import { Droppable } from "./Droppable";
 import { Draggable } from "./Draggable";
 
 import c4 from './assets/c4.mp3';
-import d4 from './assets/d4.mp3';
-import e4 from './assets/e4.mp3';
+import d4 from './assets/d-4.mp3';
 import f4 from './assets/f4.mp3';
 import g4 from './assets/g4.mp3';
-import a5 from './assets/a5.mp3';
-import b5 from './assets/b5.mp3';
+import a5 from './assets/a-5.mp3';
 import c5 from './assets/c5.mp3';
 
 function App() {
-  const numNotes = 8;
-  const numSpots = 25;
+  const numNotes = 6;
+  const numSpots = 19;
   const numIndices = numNotes * numSpots;
-  const noteNames = ["C4", "D4", "E4", "F4", "G4", "A5", "B5", "C5"];
+  const noteNames = ["C", "E♭", "F", "G", "B♭", "C"];
   const colors = [
     "#ffadad",
-    "#ffd6a5",
     "#fdffb6",
     "#caffbf",
     "#9bf6ff",
-    "#a0c4ff",
     "#bdb2ff",
-    "#ffc6ff",
+    "#ffffff",
   ];
 
   const [playC4] = useSound(c4);
   const [playD4] = useSound(d4);
-  const [playE4] = useSound(e4);
   const [playF4] = useSound(f4);
   const [playG4] = useSound(g4);
   const [playA5] = useSound(a5);
-  const [playB5] = useSound(b5);
   const [playC5] = useSound(c5);
 
-  const sounds = [playC4, playD4, playE4, playF4, playG4, playA5, playB5, playC5];
+  const sounds = [playC4, playD4, playF4, playG4, playA5, playC5];
 
   const [parents, setParents] = useState(Array(numSpots - 1).fill(-1));
   const [noteFrequencies, setNoteFrequencies] = useState(
@@ -91,7 +85,7 @@ function App() {
   return (
     <>
       <header>
-        <h1>GenEd 1080 Final Project</h1>
+        <h1>Rotating Rhythms 🎵</h1>
         <h2>Drag the tiles into the spaces below to create a song!</h2>
       </header>
       <div className="noteContainer">
